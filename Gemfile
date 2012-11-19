@@ -36,3 +36,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'spud_photos'
+gem 'aws-sdk', '~> 1.3.4'
