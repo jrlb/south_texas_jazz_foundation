@@ -6,7 +6,6 @@
   <%= javascript_include_tag "application" %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/focus.css" rel="stylesheet">
   <link href="/css/focus-responsive.css" rel="stylesheet">
   <link href="/css/pages/homepage.css" rel="stylesheet">
@@ -22,13 +21,7 @@
 <div id="wrapper" class="clearfix">
 
 	<div id="header">
-
-		<div class="container">
-
-			<h1>South Texas Jazz Foundation</h1>
-
-		</div> <!-- /container -->
-
+		<h1>South Texas Jazz Foundation</h1>
 	</div> <!-- /header -->
 
 
@@ -37,8 +30,8 @@
 		<div class="container">
 
 			<ul id="main-nav">
-				<li <%= active_page([home_index_path, '/']) %>> <%= link_to "Home", home_index_path %></li>
-				<li <%= active_page([photo_albums_path, '/']) %>> <%= link_to "Photos", photo_albums_path %></li>
+				<li <%= active_page([root_path, '/']) %>> <%= link_to "Home", root_path %></li>
+				<li <%= active_page([photo_albums_path, '/photos']) %>> <%= link_to "Photos", photo_albums_path %></li>
 			</ul>
 
 		</div> <!-- /container -->
@@ -139,9 +132,6 @@
 
 </div> <!-- /wrapper -->
 
-<script src="/js/jquery-1.7.2.min.js"></script>
-
-<script src="/js/bootstrap.min.js"></script>
 <script src="/js/focus.js"></script>
 
 <script>
