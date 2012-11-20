@@ -119,9 +119,13 @@ input {
 
 #header h1 a {
 	display: block;
+	color: black;
+	margin-bottom: 90px;
 }
 
-
+#header h1 a:hover {
+	text-decoration:none;
+}
 
 
 /*------------------------------------------------------------------
