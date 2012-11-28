@@ -1,6 +1,5 @@
 <% content_for :head do %>
-	<link rel="stylesheet" href="/css/basic.css" type="text/css" />
-	<link rel="stylesheet" href="/css/galleriffic-2.css" type="text/css" />
+    <link rel="stylesheet" href="/css/galleriffic-2.css" type="text/css" />
 	<script type="text/javascript" src="/js/jquery.galleriffic.js"></script>
 	<script type="text/javascript" src="/js/jquery.opacityrollover.js"></script>
 	<!-- We only want the thunbnails to display when javascript is disabled -->
@@ -8,11 +7,12 @@
 		document.write('<style>.noscript { display: none; }</style>');
 		$(function(){
 			$('#footer').hide();
+            $('bottom').hide();
 		});
 	</script>
 <% end %>
 
-<h2><%= @photo_album.title %></h2>
+<h2 style="text-align: center;"><%= @photo_album.title %></h2>
 
 <div id="content">
 	<div id="page">
@@ -62,7 +62,7 @@
 			preloadAhead:              10,
 			enableTopPager:            true,
 			enableBottomPager:         true,
-			maxPagesToShow:            7,
+			maxPagesToShow:            10,
 			imageContainerSel:         '#slideshow',
 			controlsContainerSel:      '#controls',
 			captionContainerSel:       '#caption',

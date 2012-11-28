@@ -125,7 +125,7 @@ div.navigation div.top {
 	height: 11px;
 }
 div.navigation div.bottom {
-	margin-top: 12px;
+	margin-top: 0px;
 }
 div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
 	display: block;

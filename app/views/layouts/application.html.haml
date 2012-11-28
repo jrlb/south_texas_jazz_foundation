@@ -24,57 +24,22 @@
         .container
           %ul#main-nav
             <li #{active_page([root_path, '/'])}> #{link_to "Home", root_path}
-            <li #{active_page([photo_albums_path, '/photos'])}> #{link_to "Photos", photo_albums_path}
+            <li #{active_page([photo_albums_path, photo_album_path('cadillac-bar'), '/photos'])}> #{link_to "Photos", photo_albums_path}
         / /container
       / /nav
       = yield
-      #footer
+
+
+      #copyright
         .container
           .row
-            .grid-4
-              %h3 South Texas Jazz Foundation
-              %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            / /grid-4
-            .grid-4
-              %h3
-                %span.slash //
-                Socialize with us!
-              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt magna aliqua.
-              %ul.social-icons-container
-                %li
-                  %a.social-icon.social-icon-twitter{:href => "javascript:;"}
-                    Twitter
-                %li
-                  %a.social-icon.social-icon-googleplus{:href => "javascript:;"}
-                    Google +
-                %li
-                  %a.social-icon.social-icon-facebook{:href => "javascript:;"}
-                    Facebook
-            / /grid-4
-            .grid-4
-              %h3
-                %span.slash //
-                Subscribe and get updates
-              %p Subscribe to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!
-              %form
-                %input{:name => "subscribe_email", :placeholder => "Your Email", :type => "text"}
-                  %br
-                    %button.btn.btn-warning Subscribe
-            / /grid-4
-          / /row
-        / /container
-      / /footer
-      /
-        #copyright
-          .container
-            .row
-              #rights.grid-6
-                © 2012 All Rights Reserved.
-              / /grid-6
-              /
-                <div id="totop" class="grid-6">
-                <a href=""></a>
-                </div>
+            #rights.grid-6
+              © 2012 All Rights Reserved.
+            / /grid-6
+            /
+              <div id="totop" class="grid-6">
+              <a href=""></a>
+              </div>
             / /row
           / /container
         / /copyright
