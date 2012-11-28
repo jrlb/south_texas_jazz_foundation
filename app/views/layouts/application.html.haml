@@ -19,14 +19,12 @@
       #header
         %h1
           = link_to "South Texas Jazz Foundation", root_path
-      / /header
-      #nav.clearfix
-        .container
-          %ul#main-nav
-            <li #{active_page([root_path, '/'])}> #{link_to "Home", root_path}
-            <li #{active_page([photo_albums_path, photo_album_path('cadillac-bar'), '/photos'])}> #{link_to "Photos", photo_albums_path}
-        / /container
-      / /nav
+      .row
+        #nav.clearfix
+          .container
+            %ul#main-nav
+              <li #{active_page([root_path, '/'])}> #{link_to "Home", root_path}
+              <li #{active_page([photo_albums_path, photo_album_path('cadillac-bar'), '/photos'])}> #{link_to "Photos", photo_albums_path}
       = yield
 
 
