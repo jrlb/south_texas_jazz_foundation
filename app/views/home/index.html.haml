@@ -4,26 +4,20 @@
       .carousel-inner
         .active.item
           = image_tag '1.jpg', class: 'img-polaroid'
-        / /item
         .item
           = image_tag '2.jpg', class: 'img-polaroid'
-        / /item
         .item
           = image_tag '3.jpg', class: 'img-polaroid'
-        / /item
-      / /carousel-inner
       %a.carousel-control.left{"data-slide" => "prev", :href => "#masthead-carousel"} ‹
       %a.carousel-control.right{"data-slide" => "next", :href => "#masthead-carousel"} ›
-    / /masthead-carousel
-  / /container
-/ /masthead
 #content
   .container
     .row
       #welcome.grid-12
         %h1 Monday Night HCC Jazz Band
-    / /row
-    %hr.row-divider/
+    .row
+      .grid-12
+        %hr.row-divider
     .row.divider.about-container
       .grid-6
         %h2
@@ -33,7 +27,6 @@
           To raise funds to benefit and promote jazz education and appreciation throughout the greater
           Houston community with jazz performances, jazz workshops, and sponsorship of the Houston
           Community College Jazz program.
-
       .grid-5
         %h2
           %span.slash //
@@ -49,6 +42,5 @@
             %i.icon-star
             HCC Monday night jazz band at HCC, 7p-9
           %p Featuring the music of Joe LoCascio.
-        / /choose-item
         %p
           / / %a{:href => "javascript:;"} More Events »
