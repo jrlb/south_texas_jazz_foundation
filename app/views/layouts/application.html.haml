@@ -12,6 +12,7 @@
               / Le HTML5 shim, for IE6-8 support of HTML5 elements
               /[if lt IE 9]
                 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+              = render 'layouts/google'
               = content_for :head
               = csrf_meta_tags
   %body
@@ -26,8 +27,6 @@
               <li #{active_page([root_path, '/'])}> #{link_to "Home", root_path}
               <li #{active_page([photo_albums_path, photo_album_path('cadillac-bar'), '/photos'])}> #{link_to "Photos", photo_albums_path}
       = yield
-
-
       #copyright
         .container
           .row
