@@ -10,8 +10,8 @@ Spud::Photos.configure do |config|
   }
   config.paperclip_storage = :s3
   config.s3_credentials = {
-    access_key_id: ENV.fetch('ACCESS_KEY'),
-    secret_access_key: ENV.fetch('SECRET_KEY'),
-    bucket: ENV.fetch('BUCKET'),
+    access_key_id: ENV['ACCESS_KEY'],
+    secret_access_key: ENV['SECRET_KEY'],
+    bucket: ENV['BUCKET'],
   }
 end
