@@ -2,7 +2,6 @@
 
 %table
   %tr
-    %th Member
     %th First name
     %th Last name
     %th Instrument
@@ -13,7 +12,6 @@
 
   - @biographies.each do |biography|
     %tr
-      %td= biography.member_id
       %td= biography.first_name
       %td= biography.last_name
       %td= biography.instrument
