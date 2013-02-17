@@ -43,3 +43,4 @@ gem 'bootstrap-sass'
 gem 'pry-rails'
 gem "haml-rails"
 gem 'thin'
+gem 'devise'

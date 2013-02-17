@@ -22,6 +22,8 @@
           = link_to "South Texas Jazz Foundation", root_path
       .row
         #nav.clearfix
+          %p.notice= notice
+          %p.alert= alert
           .container
             %ul#main-nav
               <li #{active_page([root_path, '/'])}> #{link_to "Home", root_path}
