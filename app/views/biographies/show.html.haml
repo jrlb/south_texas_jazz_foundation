@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Member:
+  = @biography.member_id
+%p
+  %b First name:
+  = @biography.first_name
+%p
+  %b Last name:
+  = @biography.last_name
+%p
+  %b Instrument:
+  = @biography.instrument
+%p
+  %b Biography:
+  = @biography.biography
+
+= link_to 'Edit', edit_biography_path(@biography)
+\|
+= link_to 'Back', biographies_path

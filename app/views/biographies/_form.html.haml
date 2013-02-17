@@ -1,0 +1,25 @@
+= form_for @biography do |f|
+  - if @biography.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@biography.errors.count, "error")} prohibited this biography from being saved:"
+      %ul
+        - @biography.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :member_id
+    = f.number_field :member_id
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :instrument
+    = f.text_field :instrument
+  .field
+    = f.label :biography
+    = f.text_area :biography
+  .actions
+    = f.submit 'Save'

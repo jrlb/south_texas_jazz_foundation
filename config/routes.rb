@@ -1,4 +1,7 @@
 SouthTexasJazzFoundation::Application.routes.draw do
+  resources :biographies
+
+
   devise_for :members
 
   root :to => 'home#index'
