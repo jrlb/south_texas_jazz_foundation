@@ -30,7 +30,7 @@
             %ul#main-nav
               = nav_link 'Home', root_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active'}
               = nav_link 'Photos', photo_albums_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active', :url_segment => 1}
-              = nav_link 'Biographies', biographies_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active', :url_segment => 1}
+              = nav_link 'Band Members', biographies_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active', :url_segment => 1}
       = yield
       #copyright
         .container
