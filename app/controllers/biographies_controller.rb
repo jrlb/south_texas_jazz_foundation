@@ -1,4 +1,6 @@
 class BiographiesController < ApplicationController
+  before_filter :authenticate_member!, :except => [:index, :show]
+
   # GET /biographies
   # GET /biographies.json
   def index

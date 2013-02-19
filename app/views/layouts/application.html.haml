@@ -22,12 +22,15 @@
           = link_to "South Texas Jazz Foundation", root_path
       .row
         #nav.clearfix
-          %p.notice= notice
-          %p.alert= alert
+          - if notice
+            %p.notice= notice
+          - if alert         
+            %p.alert= alert
           .container
             %ul#main-nav
-              <li #{active_page([root_path, '/'])}> #{link_to "Home", root_path}
-              <li #{active_page([photo_albums_path, photo_album_path('cadillac-bar'), '/photos'])}> #{link_to "Photos", photo_albums_path}
+              = nav_link 'Home', root_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active'}
+              = nav_link 'Photos', photo_albums_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active', :url_segment => 1}
+              = nav_link 'Biographies', biographies_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active', :url_segment => 1}
       = yield
       #copyright
         .container

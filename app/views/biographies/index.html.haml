@@ -1,25 +1,8 @@
-%h1 Listing biographies
 
-%table
-  %tr
-    %th First name
-    %th Last name
-    %th Instrument
-    %th Biography
-    %th
-    %th
-    %th
-
-  - @biographies.each do |biography|
-    %tr
-      %td= biography.first_name
-      %td= biography.last_name
-      %td= biography.instrument
-      %td= biography.biography
-      %td= link_to 'Show', biography
-      %td= link_to 'Edit', edit_biography_path(biography)
-      %td= link_to 'Destroy', biography, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Biography', new_biography_path
+- @biographies.sort_by { |b| b.last_name }.each do |biography|
+  .row
+    .span4= link_to biography.first_name + ' ' + biography.last_name, biography
+    - if member_signed_in?
+      .span2= link_to 'Edit', edit_biography_path(biography)
+      .span2= link_to 'Destroy', biography, method: :delete, data: { confirm: 'Are you sure?' }
+%br 

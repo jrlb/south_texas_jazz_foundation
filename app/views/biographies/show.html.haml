@@ -1,18 +1,23 @@
-%p#notice= notice
+%p.notice= notice
 
-%p
-  %b First name:
-  = @biography.first_name
-%p
-  %b Last name:
-  = @biography.last_name
-%p
-  %b Instrument:
-  = @biography.instrument
-%p
-  %b Biography:
-  = @biography.biography
+.row
+  .span2
+    %b Name:
+  .span4
+    = @biography.first_name + ' ' + @biography.last_name
 
-= link_to 'Edit', edit_biography_path(@biography)
-\|
-= link_to 'Back', biographies_path
+.row
+  .span2
+    %b Instrument:
+  .span4
+    = @biography.instrument
+  
+.row
+  .span2
+    %b Biography:
+  .span8= raw @biography.biography
+
+- if member_signed_in?
+  = link_to 'Edit', edit_biography_path(@biography)
+  \|
+  = link_to 'Back', biographies_path
