@@ -1,8 +1,61 @@
-
-- @biographies.sort_by { |b| b.last_name }.each do |biography|
-  .row
-    .span4= link_to biography.first_name + ' ' + biography.last_name, biography
+.row
+  Conductor
+.row
+  - Biography.conductors.each do |conductor|
+    .span2= link_to conductor.full_name, conductor
     - if member_signed_in?
-      .span2= link_to 'Edit', edit_biography_path(biography)
-      .span2= link_to 'Destroy', biography, method: :delete, data: { confirm: 'Are you sure?' }
-%br 
+      .span2
+        (
+        = link_to 'Edit', edit_biography_path(conductor)
+        = link_to 'Destroy', conductor, method: :delete, data: { confirm: 'Are you sure?' }
+        )
+%hr
+.row
+  Saxophones
+.row
+  - Biography.saxes.each do |sax|
+    .span2= link_to sax.full_name, sax
+    - if member_signed_in?
+      .span2
+        (
+        = link_to 'Edit', edit_biography_path(sax)
+        = link_to 'Destroy', sax, method: :delete, data: { confirm: 'Are you sure?' }
+        )
+%hr
+.row
+  Trombones
+.row
+  - Biography.bones.each do |bone|
+    .span2= link_to bone.full_name, bone
+    - if member_signed_in?
+      .span2
+        (
+        = link_to 'Edit', edit_biography_path(bone)
+        = link_to 'Destroy', bone, method: :delete, data: { confirm: 'Are you sure?' }
+        )
+%hr
+.row
+  Trumpets
+.row
+  - Biography.trumpets.each do |trumpet|
+    .span2= link_to trumpet.full_name, trumpet
+    - if member_signed_in?
+      .span2
+        (
+        = link_to 'Edit', edit_biography_path(trumpet)
+        = link_to 'Destroy', trumpet, method: :delete, data: { confirm: 'Are you sure?' }
+        )
+%hr
+.row
+  Rhythm Section
+.row
+  - Biography.rhythm.each do |rhythm|
+    .span2= link_to rhythm.full_name, rhythm
+    - if member_signed_in?
+      .span2
+        (
+        = link_to 'Edit', edit_biography_path(rhythm)
+        = link_to 'Destroy', rhythm, method: :delete, data: { confirm: 'Are you sure?' }
+        )
+
+%hr
