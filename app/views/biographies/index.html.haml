@@ -1,60 +1,60 @@
 .row
   Conductor
 .row
-  - @presenter.conductors.each do |conductor|
-    .span2= link_to conductor.full_name, conductor
+  - @presenter.conductors.each do |person|
+    .span2= link_to person.full_name, person
     - if member_signed_in?
       .row
         (
-        = link_to 'Edit', edit_biography_path(conductor)
-        = link_to 'Destroy', conductor, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'Edit', edit_biography_path(person)
+        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
         )
 %hr
 .row
   Saxophones
 .row
-  - @presenter.saxes.each do |sax|
-    .span2= link_to sax.full_name, sax
+  - @presenter.saxes.each do |person|
+    .span2= link_to person.full_name, person
     - if member_signed_in?
       .row
         (
-        = link_to 'Edit', edit_biography_path(sax)
-        = link_to 'Destroy', sax, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'Edit', edit_biography_path(person)
+        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
         )
 %hr
 .row
   Trombones
 .row
-  - @presenter.bones.each do |bone|
-    .span2= link_to bone.full_name, bone
+  - @presenter.bones.each do |person|
+    .span2= link_to person.full_name, person
     - if member_signed_in?
       .row
         (
-        = link_to 'Edit', edit_biography_path(bone)
-        = link_to 'Destroy', bone, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'Edit', edit_biography_path(person)
+        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
         )
 %hr
 .row
   Trumpets
 .row
-  - @presenter.trumpets.each do |trumpet|
-    .span2= link_to trumpet.full_name, trumpet
+  - @presenter.trumpets.each do |person|
+    .span2= link_to person.full_name, person
     - if member_signed_in?
       .row
         (
-        = link_to 'Edit', edit_biography_path(trumpet)
-        = link_to 'Destroy', trumpet, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'Edit', edit_biography_path(person)
+        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
         )
 %hr
 .row
   Rhythm Section
 .row
-  - @presenter.rhythm.each do |rhythm|
-    .span2= link_to rhythm.full_name, rhythm
+  - @presenter.rhythm.each do |person|
+    .span2= link_to person.full_name, person
     - if member_signed_in?
       .row
         (
-        = link_to 'Edit', edit_biography_path(rhythm)
-        = link_to 'Destroy', rhythm, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'Edit', edit_biography_path(person)
+        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
         )
 %hr
