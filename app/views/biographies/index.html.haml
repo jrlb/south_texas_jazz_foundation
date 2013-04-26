@@ -1,60 +1,14 @@
-.row
-  Conductor
-.row
-  - @presenter.conductors.each do |person|
-    .span2= link_to person.full_name, person
-    - if member_signed_in?
-      .row
-        (
-        = link_to 'Edit', edit_biography_path(person)
-        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
-        )
-%hr
-.row
-  Saxophones
-.row
-  - @presenter.saxes.each do |person|
-    .span2= link_to person.full_name, person
-    - if member_signed_in?
-      .row
-        (
-        = link_to 'Edit', edit_biography_path(person)
-        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
-        )
-%hr
-.row
-  Trombones
-.row
-  - @presenter.bones.each do |person|
-    .span2= link_to person.full_name, person
-    - if member_signed_in?
-      .row
-        (
-        = link_to 'Edit', edit_biography_path(person)
-        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
-        )
-%hr
-.row
-  Trumpets
-.row
-  - @presenter.trumpets.each do |person|
-    .span2= link_to person.full_name, person
-    - if member_signed_in?
-      .row
-        (
-        = link_to 'Edit', edit_biography_path(person)
-        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
-        )
-%hr
-.row
-  Rhythm Section
-.row
-  - @presenter.rhythm.each do |person|
-    .span2= link_to person.full_name, person
-    - if member_signed_in?
-      .row
-        (
-        = link_to 'Edit', edit_biography_path(person)
-        = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
-        )
-%hr
+- @presenter.band.each do |header, section|
+  .row
+    = header
+  .row
+    - section.each do |person|
+      .span2= link_to person.full_name, person
+      - if member_signed_in?
+        .row
+          (
+          = link_to 'Edit', edit_biography_path(person)
+          = link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
+          )
+    .row
+      %hr
