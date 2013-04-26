@@ -4,7 +4,7 @@ class BiographiesController < ApplicationController
   # GET /biographies
   # GET /biographies.json
   def index
-    @biographies = Biography.all
+    @presenter = BioPresenter.new
 
     respond_to do |format|
       format.html # index.html.erb

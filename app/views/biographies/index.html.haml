@@ -1,7 +1,7 @@
 .row
   Conductor
 .row
-  - Biography.conductors.each do |conductor|
+  - @presenter.conductors.each do |conductor|
     .span2= link_to conductor.full_name, conductor
     - if member_signed_in?
       .row
@@ -13,7 +13,7 @@
 .row
   Saxophones
 .row
-  - Biography.saxes.each do |sax|
+  - @presenter.saxes.each do |sax|
     .span2= link_to sax.full_name, sax
     - if member_signed_in?
       .row
@@ -25,7 +25,7 @@
 .row
   Trombones
 .row
-  - Biography.bones.each do |bone|
+  - @presenter.bones.each do |bone|
     .span2= link_to bone.full_name, bone
     - if member_signed_in?
       .row
@@ -37,7 +37,7 @@
 .row
   Trumpets
 .row
-  - Biography.trumpets.each do |trumpet|
+  - @presenter.trumpets.each do |trumpet|
     .span2= link_to trumpet.full_name, trumpet
     - if member_signed_in?
       .row
@@ -49,7 +49,7 @@
 .row
   Rhythm Section
 .row
-  - Biography.rhythm.each do |rhythm|
+  - @presenter.rhythm.each do |rhythm|
     .span2= link_to rhythm.full_name, rhythm
     - if member_signed_in?
       .row
