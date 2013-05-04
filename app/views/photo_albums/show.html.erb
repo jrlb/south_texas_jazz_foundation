@@ -28,6 +28,11 @@
 						<a class="thumb" name="leaf" href="<%= photo.photo.url(:large) %>" title="<%= photo.title %>">
 							<img src="<%= photo.photo.url(:small) %>" alt="<%= photo.title %>" />
 						</a>
+                                                <div class="caption">
+                                                  <div class="download">
+                                                    <a href="<%= photo.photo.url(:huge) %>">Download Original</a>
+                                                  </div>
+                                                </div>
 					</li>
 					<% end %>
 				</ul>
@@ -50,7 +55,7 @@
 			fadeSpeed:         'fast',
 			exemptionSelector: '.selected'
 		});
-				
+
 		// Initialize Advanced Galleriffic Gallery
 		var gallery = $('#thumbs').galleriffic({
 			delay:                     2500,
