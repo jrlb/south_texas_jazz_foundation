@@ -3,7 +3,7 @@
     = header
   .row
     - section.each do |person|
-      .span2= link_to person.full_name, person
+      .span2= link_to person.full_name, band_member_path(person)
       - if member_signed_in?
         .row
           (
