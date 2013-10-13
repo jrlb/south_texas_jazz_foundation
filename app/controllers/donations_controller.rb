@@ -5,7 +5,7 @@ class DonationsController < ApplicationController
 
   def create
     @donation = Donation.new(params[:donation])
-    if @donation.save
+    if @donation.save_with_payment(params[:stripe_card_token])
       redirect_to new_donation_path, notice: 'Thank you for donating!'
     else
       render :new
