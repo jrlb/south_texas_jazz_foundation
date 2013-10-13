@@ -11,4 +11,9 @@ class DonationsController < ApplicationController
       render :new
     end
   end
+
+  def hook
+    event_json = JSON.parse(request.body.read)
+    logger.info event_json
+  end
 end
