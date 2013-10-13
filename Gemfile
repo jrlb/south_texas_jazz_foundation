@@ -48,3 +48,4 @@ gem "haml-rails"
 gem 'thin'
 gem 'devise'
 gem 'stripe'
+gem 'money-rails'

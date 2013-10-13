@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(:version => 20131013093059) do
   end
 
   create_table "donations", :force => true do |t|
-    t.integer  "amount"
+    t.integer  "amount_cents",    :default => 0,     :null => false
+    t.string   "amount_currency", :default => "USD", :null => false
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   add_index "donations", ["email"], :name => "index_donations_on_email"
