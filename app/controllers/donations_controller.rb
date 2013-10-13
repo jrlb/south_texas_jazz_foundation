@@ -15,7 +15,14 @@ class DonationsController < ApplicationController
 
   def hook
     event_json = JSON.parse(request.body.read)
-
+    send_receipt(event_json["description"])
     render nothing: true, status: :ok
+  end
+
+  private
+
+  def send_receipt(email)
+    donation = Donation.find_by(email: email)
+    Notifications.card_charged(email, donation.amount)
   end
 end
