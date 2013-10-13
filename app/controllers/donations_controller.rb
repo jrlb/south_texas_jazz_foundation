@@ -22,7 +22,7 @@ class DonationsController < ApplicationController
   private
 
   def send_receipt(email)
-    donation = Donation.find_by(email: email)
+    donation = Donation.find_by_email(email)
     Notifications.card_charged(email, donation.amount)
   end
 end
