@@ -8,14 +8,14 @@ class Donation < ActiveRecord::Base
   validates :amount, numericality: { greater_than: 0 }, presence: true
 
   def save_with_payment(token)
-    Stripe::Customer.create(:description => email,
-                            :card => token)
+    customer = Stripe::Customer.create(email: email,
+                                       card: token)
     if valid?
       begin
-        Stripe::Charge.create(:amount => amount_cents,
-                              :currency => "usd",
-                              :card => token,
-                              :description => email)
+        Stripe::Charge.create(amount: amount_cents,
+                              currency: "usd",
+                              customer: customer,
+                              description: email)
       rescue Stripe::CardError => e
         logger.error "Stripe error while creating customer: #{e.mesage}"
         errors.add :base, "There was a problem with your credit card."
