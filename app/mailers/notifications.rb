@@ -7,7 +7,7 @@ class Notifications < ActionMailer::Base
   #   en.notifications.card_charged.subject
   #
   def card_charged(email, amount)
-    @amount = amount
+    @amount = '%.2f' % amount
     mail to: email, subject: "South Texas Jazz Foundation Donation"
   end
 end
