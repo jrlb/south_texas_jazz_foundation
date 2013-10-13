@@ -15,7 +15,7 @@ class DonationsController < ApplicationController
 
   def hook
     event_json = JSON.parse(request.body.read)
-    logger.info event_json
+
     render nothing: true, status: :ok
   end
 end
