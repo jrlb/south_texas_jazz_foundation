@@ -22,15 +22,17 @@
           = link_to "South Texas Jazz Foundation", root_path
       .row
         #nav.clearfix
-          - if notice
-            %p.notice= notice
-          - if alert
-            %p.alert= alert
           .container
             %ul#main-nav
               = nav_link 'Home', root_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active'}
               = nav_link 'Photos', photo_albums_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active', :url_segment => 1}
               = nav_link 'Band Members', band_members_path, { :class => 'link' }, {:wrapper => 'li', :wrapper_class => '', :selected_class => 'active', :url_segment => 1}
+      .row
+        #nav.clearfix
+          - if notice
+            %p#flash_notice= notice
+          - if alert
+            %p#flash_alert= alert
       = yield
       #copyright
         .container
