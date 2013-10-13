@@ -1,0 +1,13 @@
+%h2 Press Releases
+
+%table
+  - @press_releases.each do |press_release|
+    %tr
+      %td= link_to press_release.title, press_release
+    - if member_signed_in?
+      %td= link_to 'Show', press_release
+      %td= link_to 'Edit', edit_press_release_path(press_release)
+      %td= link_to 'Destroy', press_release, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+- if member_signed_in?
+  = link_to 'New Press release', new_press_release_path

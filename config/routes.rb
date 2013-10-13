@@ -1,4 +1,5 @@
 SouthTexasJazzFoundation::Application.routes.draw do
+  resources :press_releases
   resources :donations
   resources :biographies
   get '/band_members' => 'biographies#index', :as => 'band_members'
