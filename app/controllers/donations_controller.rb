@@ -1,4 +1,5 @@
 class DonationsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: :hook
   def new
     @donation = Donation.new
   end
