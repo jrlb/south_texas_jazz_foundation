@@ -14,6 +14,7 @@ class Donation < ActiveRecord::Base
                               currency: "usd",
                               card: token,
                               description: email)
+        save!
       rescue Stripe::CardError => e
         logger.error "Stripe error while creating customer: #{e.mesage}"
         errors.add :base, "There was a problem with your credit card."
