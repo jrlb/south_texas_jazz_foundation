@@ -48,5 +48,6 @@ gem "haml-rails"
 gem 'thin'
 gem 'devise'
 gem 'stripe'
+gem 'stripe_event'
 gem 'money-rails'
 gem 'rails_12factor'
