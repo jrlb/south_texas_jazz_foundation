@@ -15,7 +15,9 @@ class DonationsController < ApplicationController
 
   def hook
     event_json = JSON.parse(request.body.read)
-    send_receipt(event_json["description"])
+    if event_json["charge.succeeded"]
+      send_receipt(event_json["description"])
+    end
     render nothing: true, status: :ok
   end
 
