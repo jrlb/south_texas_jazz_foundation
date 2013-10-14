@@ -17,8 +17,8 @@ class DonationsController < ApplicationController
     event_json = JSON.parse(request.body.read)
     if event_json["type"] == "charge.succeeded"
       logger.info event_json["type"]
-      logger.info event_json["description"]
-      send_receipt(event_json["description"])
+      logger.info event_json["data"]["description"]
+      send_receipt(event_json["data"]["description"])
     end
     render nothing: true, status: :ok
   end
