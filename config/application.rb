@@ -62,5 +62,17 @@ module SouthTexasJazzFoundation
     config.assets.precompile += ['spud/admin/photos.js', 'spud/admin/photos.css']
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.smtp_settings = {
+      :port           => ENV['MAILGUN_SMTP_PORT'],
+      :address        => ENV['MAILGUN_SMTP_SERVER'],
+      :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+      :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+      :domain         => 'stxjazz.org',
+      :authentication => :plain,
+    }
+
   end
 end
