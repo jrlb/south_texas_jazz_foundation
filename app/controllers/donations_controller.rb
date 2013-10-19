@@ -25,6 +25,6 @@ class DonationsController < ApplicationController
 
   def send_receipt(email)
     donation = Donation.where(email: email).last
-    Notifications.card_charged(email, donation.amount.to_f)
+    Notifications.card_charged(email, donation.amount.to_f).deliver
   end
 end
