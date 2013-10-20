@@ -1,0 +1,20 @@
+Dear <%= @donation.name %>,
+
+Thank you for your gift to the South Texas Jazz Foundation. This gift
+will help us in our mission to strengthen jazz education in greater
+Houston area.
+
+Sincerely,
+
+The South Texas Jazz Foundation
+
+No goods or services were received in exchange for this donation and your
+contribution is entirely tax-deductible as allowed by law.
+
+Your Donation Record:
+
+Origination: South Texas Jazz Foundation
+Amount: $<%= '%.2f' % @donation.amount.to_f %>
+Donation Frequency: One-time gift
+Transaction ID: <%= @txn %>
+Transaction Date: <%= @donation.created_at %>
