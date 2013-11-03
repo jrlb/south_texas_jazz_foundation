@@ -3,6 +3,12 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
+
+  $('.plan-actions').on 'click', 'a', (e) ->
+    e.preventDefault()
+    level = $(this).data('donation')
+    location.href = "/donations/new?level=#{level}"
+
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
   donation.setupForm()
 
