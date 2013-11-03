@@ -1,8 +1,7 @@
 class DonationsController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :hook
   def new
-    @level    = params[:price]
-    @donation = Donation.new
+    @donation = Donation.new amount: params[:level]
   end
 
   def create

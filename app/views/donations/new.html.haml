@@ -13,7 +13,7 @@
   = hidden_field_tag :stripe_card_token, nil, name: "stripe_card_token", id: "stripe_card_token"
   .field
     = f.label :amount, 'Amount of Donation'
-    = f.text_field :amount
+    = f.text_field :amount, {disabled: true}
   .field
     = f.label :name
     = f.text_field :name
