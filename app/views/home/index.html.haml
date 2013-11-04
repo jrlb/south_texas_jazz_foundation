@@ -49,9 +49,9 @@
         %li
           %a{"data-toggle" => "tab", :href => "#tab2"} Liner Notes
       .tab-content
-        #tab1.tab-pane.active
+        #tab1.tab-pane.fade.in.active
           %a{"href" => '/BigMotel_Jacket_Nov3.pdf'}
             %img{"src" => '/BigMotel_Jacket_Nov3.jpg'}
-        #tab2.tab-pane
+        #tab2.tab-pane.fade.in
           %div.boxsizingBorder
             = render 'liner_notes'
