@@ -1,7 +1,12 @@
 class DonationsController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :hook
   def new
-    @donation = Donation.new amount: params[:level]
+    if params[:level] == "custom"
+      @donation = Donation.new
+    else
+      @donation = Donation.new amount: params[:level]
+    end
+
   end
 
   def create
@@ -28,4 +33,10 @@ class DonationsController < ApplicationController
     donation = Donation.where(email: email).last
     Notifications.card_charged(tranaction_id, donation).deliver
   end
+
+  def amount?
+    !@donation.amount_cents.zero?
+  end
+
+  helper_method :amount?
 end
