@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131013123734) do
+ActiveRecord::Schema.define(:version => 20131123225623) do
 
   create_table "biographies", :force => true do |t|
     t.integer  "member_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20131013123734) do
     t.string   "email"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+    t.string   "token"
   end
 
   add_index "donations", ["email"], :name => "index_donations_on_email"

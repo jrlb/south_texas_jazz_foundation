@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class Donation < ActiveRecord::Base
-  attr_accessible :amount, :email, :name
+  attr_accessible :amount, :email, :name, :token
 
   monetize :amount_cents
 
@@ -11,13 +11,14 @@ class Donation < ActiveRecord::Base
     all.group_by { |d| Donation::Level.membership d.amount }
   end
 
-  def save_with_payment(token)
+  def save_with_payment(stripe_token)
     if valid?
       begin
         Stripe::Charge.create(amount: amount_cents,
-                              currency: "usd",
-                              card: token,
+                              currency: 'usd',
+                              card: stripe_token,
                               description: email)
+        self.token = stripe_token
         save!
       rescue Stripe::CardError => e
         logger.error "Stripe error while creating customer: #{e.mesage}"
