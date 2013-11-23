@@ -1,4 +1,5 @@
 SouthTexasJazzFoundation::Application.routes.draw do
+  resources :donors, only: [:index]
   resources :press_releases
   resources :donations
   post 'donations/hook', to: 'donations#hook'

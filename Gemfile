@@ -38,7 +38,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :development, :test do
-  gem 'pry-debugger'
+  gem 'pry'
 end
 
 gem 'spud_photos'

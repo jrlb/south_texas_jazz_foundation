@@ -7,6 +7,10 @@ class Donation < ActiveRecord::Base
   validates :name, :email,  presence: true
   validates :amount, numericality: { greater_than: 0 }, presence: true
 
+  def self.donors
+    all.group_by { |d| Donation::Level.membership d.amount }
+  end
+
   def save_with_payment(token)
     if valid?
       begin

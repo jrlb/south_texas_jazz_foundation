@@ -1,0 +1,12 @@
+.container
+  .row
+    .span8
+      %h1 Donors
+      %hr
+  .row
+    .offset1.span7
+      - @donors.each do |(level, d)|
+        %h3= level
+        %hr
+        - d.each do |doner|
+          %p= doner.name
