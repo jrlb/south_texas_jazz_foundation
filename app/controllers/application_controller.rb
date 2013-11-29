@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   def send_receipt(email, tranaction_id)
     donation = Donation.where(email: email).last
+    donation.token = tranaction_id
+    donation.save
     Notifications.card_charged(tranaction_id, donation).deliver
   end
 end
