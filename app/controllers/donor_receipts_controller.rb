@@ -1,4 +1,6 @@
 class DonorReceiptsController < ApplicationController
+  before_filter :authenticate_member!
+
   def index
     @donors = Donation.all
   end

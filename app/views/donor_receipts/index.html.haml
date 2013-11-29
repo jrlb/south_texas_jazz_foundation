@@ -8,6 +8,8 @@
       %th
         Donation Amount
       %th
+        Date Created
+      %th
         Stripe Info
       %th
     - @donors.each do |donor|
@@ -19,6 +21,8 @@
         %td
           $
           = donor.amount
+        %td
+          = time_ago_in_words donor.created_at
         %td
           = link_to 'Get Stripe Info', "https://manage.stripe.com/payments/#{donor.token}"
         %td
