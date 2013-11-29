@@ -1,29 +1,28 @@
-.container
-  %table.table.table-striped
+%table.table.table-striped
+  %tr
+    %th
+      Name
+    %th
+      Email
+    %th
+      Donation Amount
+    %th
+      Created
+    %th
+      Stripe Info
+    %th
+  - @donors.each do |donor|
     %tr
-      %th
-        Name
-      %th
-        Email
-      %th
-        Donation Amount
-      %th
-        Date Created
-      %th
-        Stripe Info
-      %th
-    - @donors.each do |donor|
-      %tr
-        %td
-          = donor.name
-        %td
-          = mail_to donor.email
-        %td
-          $
-          = donor.amount
-        %td
-          = time_ago_in_words donor.created_at
-        %td
-          = link_to 'Get Stripe Info', "https://manage.stripe.com/payments/#{donor.token}"
-        %td
-          = button_to 'Resend Receipt', resend_receipt_donor_receipt_path(donor)
+      %td
+        = donor.name
+      %td
+        = mail_to donor.email
+      %td
+        $
+        = donor.amount
+      %td
+        = time_ago_in_words donor.created_at
+      %td
+        = link_to 'Get Stripe Info', "https://manage.stripe.com/payments/#{donor.token}"
+      %td
+        = button_to 'Resend Receipt', resend_receipt_donor_receipt_path(donor), class: 'btn'
