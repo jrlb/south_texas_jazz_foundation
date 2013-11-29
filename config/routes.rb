@@ -1,4 +1,9 @@
 SouthTexasJazzFoundation::Application.routes.draw do
+  resources :donor_receipts, only: [:index] do
+    member do
+      post 'resend_receipt'
+    end
+  end
   resources :donors, only: [:index]
   resources :press_releases
   resources :donations

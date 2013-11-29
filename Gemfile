@@ -45,7 +45,7 @@ gem 'spud_photos'
 gem 'aws-sdk', '~> 1.3.4'
 gem 'bootstrap-sass'
 gem 'pry-rails'
-gem "haml-rails"
+gem 'haml-rails'
 gem 'thin'
 gem 'devise'
 gem 'stripe'

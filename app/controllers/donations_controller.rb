@@ -20,19 +20,14 @@ class DonationsController < ApplicationController
 
   def hook
     event_json = JSON.parse(request.body.read)
-    if event_json["type"] == "charge.succeeded"
-      send_receipt(event_json["data"]["object"]["description"],
-                   event_json["data"]["object"]["id"])
+    if event_json['type'] == 'charge.succeeded'
+      send_receipt(event_json['data']['object']['description'],
+                   event_json['data']['object']['id'])
     end
     render nothing: true, status: :ok
   end
 
   private
-
-  def send_receipt(email, tranaction_id)
-    donation = Donation.where(email: email).last
-    Notifications.card_charged(tranaction_id, donation).deliver
-  end
 
   def amount?
     !@donation.amount_cents.zero?

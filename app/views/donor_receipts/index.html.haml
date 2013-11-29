@@ -1,0 +1,25 @@
+.container
+  %table.table.table-striped
+    %tr
+      %th
+        Name
+      %th
+        Email
+      %th
+        Donation Amount
+      %th
+        Stripe Info
+      %th
+    - @donors.each do |donor|
+      %tr
+        %td
+          = donor.name
+        %td
+          = mail_to donor.email
+        %td
+          $
+          = donor.amount
+        %td
+          = link_to 'Get Stripe Info', "https://manage.stripe.com/payments/#{donor.token}"
+        %td
+          = button_to 'Resend Receipt', resend_receipt_donor_receipt_path(donor)
