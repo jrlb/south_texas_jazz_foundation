@@ -6,7 +6,7 @@ class CreateSpudPhotoAlbums < ActiveRecord::Migration
       t.string :url_name
       t.timestamps
     end
-    create_table :spud_photo_albums_photos, :id => false do |t|
+    create_table :spud_photo_albums_photos, id: false do |t|
       t.integer :spud_photo_album_id
       t.integer :spud_photo_id
     end

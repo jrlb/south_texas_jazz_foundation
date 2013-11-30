@@ -1,7 +1,7 @@
 class DonationsController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :hook
   def new
-    if params[:level] == "custom"
+    if params[:level] == 'custom'
       @donation = Donation.new
     else
       @donation = Donation.new amount: params[:level]

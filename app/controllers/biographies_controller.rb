@@ -1,5 +1,5 @@
 class BiographiesController < ApplicationController
-  before_filter :authenticate_member!, :except => [:index, :show]
+  before_filter :authenticate_member!, except: [:index, :show]
 
   # GET /biographies
   # GET /biographies.json
@@ -49,7 +49,7 @@ class BiographiesController < ApplicationController
         format.html { redirect_to @biography, notice: 'Biography was successfully created.' }
         format.json { render json: @biography, status: :created, location: @biography }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @biography.errors, status: :unprocessable_entity }
       end
     end
@@ -65,7 +65,7 @@ class BiographiesController < ApplicationController
         format.html { redirect_to @biography, notice: 'Biography was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @biography.errors, status: :unprocessable_entity }
       end
     end

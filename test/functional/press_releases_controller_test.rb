@@ -5,18 +5,18 @@ class PressReleasesControllerTest < ActionController::TestCase
     @press_release = press_releases(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:press_releases)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create press_release" do
+  test 'should create press_release' do
     assert_difference('PressRelease.count') do
       post :create, press_release: { story: @press_release.story, title: @press_release.title }
     end
@@ -24,22 +24,22 @@ class PressReleasesControllerTest < ActionController::TestCase
     assert_redirected_to press_release_path(assigns(:press_release))
   end
 
-  test "should show press_release" do
+  test 'should show press_release' do
     get :show, id: @press_release
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @press_release
     assert_response :success
   end
 
-  test "should update press_release" do
+  test 'should update press_release' do
     put :update, id: @press_release, press_release: { story: @press_release.story, title: @press_release.title }
     assert_redirected_to press_release_path(assigns(:press_release))
   end
 
-  test "should destroy press_release" do
+  test 'should destroy press_release' do
     assert_difference('PressRelease.count', -1) do
       delete :destroy, id: @press_release
     end

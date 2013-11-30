@@ -1,5 +1,5 @@
 class PressReleasesController < ApplicationController
-  before_filter :authenticate_member!, :except => [:index, :show]
+  before_filter :authenticate_member!, except: [:index, :show]
   # GET /press_releases
   # GET /press_releases.json
   def index
@@ -48,7 +48,7 @@ class PressReleasesController < ApplicationController
         format.html { redirect_to @press_release, notice: 'Press release was successfully created.' }
         format.json { render json: @press_release, status: :created, location: @press_release }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @press_release.errors, status: :unprocessable_entity }
       end
     end
@@ -64,7 +64,7 @@ class PressReleasesController < ApplicationController
         format.html { redirect_to @press_release, notice: 'Press release was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @press_release.errors, status: :unprocessable_entity }
       end
     end

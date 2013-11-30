@@ -2,7 +2,7 @@ class BioPresenter
 
   attr_reader :model
 
-  def initialize(model=Biography)
+  def initialize(model = Biography)
     @model = model
   end
 
@@ -33,8 +33,8 @@ class BioPresenter
   private
 
   def this_method
-    caller[0]=~/`(.*?)'/
-    $1
+    caller[0] =~ /`(.*?)'/
+    Regexp.last_match[1]
   end
 
 end

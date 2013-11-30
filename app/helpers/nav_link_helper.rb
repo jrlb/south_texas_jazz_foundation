@@ -24,7 +24,7 @@ module NavLinkHelper
       html = link
 
       if @options[:wrapper]
-        html = content_tag(@options[:wrapper], html, :class => wrapper_classes)
+        html = content_tag(@options[:wrapper], html, class: wrapper_classes)
       end
 
       html.html_safe
@@ -97,7 +97,7 @@ module NavLinkHelper
     end
 
     def html_options
-      selected? ? @html_options.merge(:class => link_classes) : @html_options
+      selected? ? @html_options.merge(class: link_classes) : @html_options
     end
 
     def link
